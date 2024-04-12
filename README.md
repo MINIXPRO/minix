@@ -1,0 +1,7 @@
+## Minix
+
+Meril
+
+#### License
+
+MIT
