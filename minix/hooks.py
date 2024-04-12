@@ -111,7 +111,7 @@ doctype_list_js = {"Asset" : "public/js/list/asset.js"}
 # Override standard doctype classes
 
 override_doctype_class = {
-	"Purchase Invoice": "micro.micro.overrides.purchase_invoice.CustomPurchaseInvoice"
+	"Purchase Invoice": "minix.minix.overrides.purchase_invoice.CustomPurchaseInvoice"
 }
 
 # Document Events
@@ -120,7 +120,7 @@ override_doctype_class = {
 
 doc_events = {
     "Supplier": {
-		"before_save": "micro.micro.overrides.supplier.before_save",
+		"before_save": "minix.minix.overrides.supplier.before_save",
 	}
 }
 
