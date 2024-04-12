@@ -215,3 +215,7 @@ app_license = "MIT"
 # auth_hooks = [
 #	"minix.auth.validate"
 # ]
+fixtures = [
+    {"dt": "Property Setter", "filters": [["module", "in", [app_title]]]},
+    {"dt": "Custom Field", "filters": [["module", "=", app_title]]},
+]
