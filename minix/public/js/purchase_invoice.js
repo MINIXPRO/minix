@@ -1,20 +1,22 @@
 
 frappe.ui.form.on('Purchase Invoice', {
     onload: function(frm) {
-        frappe.call({
-            method: 'minix.minix.overrides.purchase_invoice.check_suplier_multiple_tds',
-            args: {
-                supplier: frm.doc.supplier,
-            },
-            freeze: true,
-            callback: r => {
-                if (r.message) {
-                    frm.set_value("cnp_multi_tsd", r.message);
-                    frm.refresh_field("taxes_and_charges_overide")
-                    frm.refresh_field("cnp_multi_tsd")
+        if(frm.doc.supplier){
+            frappe.call({
+                method: 'minix.minix.overrides.purchase_invoice.check_suplier_multiple_tds',
+                args: {
+                    supplier: frm.doc.supplier,
+                },
+                freeze: true,
+                callback: r => {
+                    if (r.message) {
+                        frm.set_value("cnp_multi_tsd", r.message);
+                        frm.refresh_field("taxes_and_charges_overide")
+                        frm.refresh_field("cnp_multi_tsd")
+                    }
                 }
-            }
-        })
+            })
+        }
     },
     refresh: frm => {
         set_read_only(frm)
