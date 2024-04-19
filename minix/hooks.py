@@ -130,8 +130,21 @@ app_license = "mit"
 # 	}
 # }
 
+ # doc_events = {
+ # 	# "*": {
+ # 	# 	"on_update": "method",
+ # 	# 	"on_cancel": "method",
+ # 	# 	"on_trash": "method"
+ # 	# },
+
+ # 	""
+
+ #  }
+
 # Scheduled Tasks
 # ---------------
+
+
 
 # scheduler_events = {
 # 	"all": [
