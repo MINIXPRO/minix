@@ -65,6 +65,7 @@ def generate_keys(user):
 
 
 
+
 @frappe.whitelist(allow_guest=True)
 def get_attendance():
     url = "http://api.microcrispr.com/Attendance1/api/Values?username=admin&&password=MerilADM"
@@ -173,7 +174,7 @@ def test():
     #     print("******************************")
     #     print(i.in_time.date())
     #     if i.in_time..date() is null:
-    #         
+            
 
 
 
