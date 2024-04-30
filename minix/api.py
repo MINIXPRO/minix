@@ -118,6 +118,132 @@ def get_attendance():
 
 
 
+# @frappe.whitelist(allow_guest=True)
+# def mat():
+
+#     values = frappe.db.sql(""" select applicant_name, custom_applicant_last_name, email_id, phone_number from `tabJob Applicant` """,as_dict=1)
+#     url = "https://ems-urlprotect.trendmicro.com:443/wis/clicktime/v1/query?url=http%3a%2f%2fdilsf.merillifeweb.com%2fNewUser.asmx%2fCreateUser&umid=35e5e65e-c1e3-412c-a58c-1acd95becd79&auth=386938388a5a1db71b12d9f9c73071895fd4f132-6562c98ed2dbc108735a1c8cb3455e8ce39e55de"
+#     for entry in values:
+#         data = {
+#         "NM": entry.get("Applicant", ""),
+#         "custom_applicant_last_name": entry.get("LN", ""),
+#         "email_id": entry.get("EL", ""),
+#         "phone_number": entry.get("CN", "")
+#         }
+#         response = requests.post(url, data=data)
+#         if response.status_code == 200:
+#             print("POST request successful!")
+#         else:
+#             print(f"Failed to make POST request. Status code: {response.status_code}")
+
+
+
+
+# @frappe.whitelist(allow_guest=True)
+# def mat():
+#     values = frappe.db.sql("""SELECT applicant_name, custom_applicant_last_name, email_id, phone_number FROM `tabJob Applicant`""", as_dict=1)
+    
+
+#     url = "https://ems-urlprotect.trendmicro.com:443/wis/clicktime/v1/query?url=http%3a%2f%2fdilsf.merillifeweb.com%2fNewUser.asmx%2fCreateUser&umid=35e5e65e-c1e3-412c-a58c-1acd95becd79&auth=386938388a5a1db71b12d9f9c73071895fd4f132-6562c98ed2dbc108735a1c8cb3455e8ce39e55de"
+    
+   
+#     for entry in values:
+        
+#         data = {
+#             "NM": entry.get("applicant_name", ""),
+#             "LN": entry.get("custom_applicant_last_name", ""),
+#             "EL": entry.get("email_id", ""),
+#             "CN": entry.get("phone_number", "")
+#         }
+        
+        
+#         response = requests.post(url, data=data)
+        
+#         if response.status_code == 200:
+#             print("POST request successful!")
+#         else:
+#             print(f"Failed to make POST request. Status code: {response.status_code}")
+
+
+
+@frappe.whitelist(allow_guest=True)
+def mat_single(applicant_name, custom_applicant_last_name, email_id, phone_number):
+    print("**********************************")
+    print(applicant_name,custom_applicant_last_name, email_id, phone_number)
+    url = "https://ems-urlprotect.trendmicro.com:443/wis/clicktime/v1/query?url=http%3a%2f%2fdilsf.merillifeweb.com%2fNewUser.asmx%2fCreateUser&umid=35e5e65e-c1e3-412c-a58c-1acd95becd79&auth=386938388a5a1db71b12d9f9c73071895fd4f132-6562c98ed2dbc108735a1c8cb3455e8ce39e55de"
+    data = {
+
+        "NM": applicant_name,
+        "LN": custom_applicant_last_name,
+        "EL": email_id,
+        "CN": phone_number
+
+    }
+    response = requests.post(url, data=data)
+    if response.status_code == 200:
+        print("POST request successful")
+    else:
+        print(f"Failed to make POST request. Status code: {response.status_code}")
+
+
+@frappe.whitelist(allow_guest=True)
+def ilsf_single(applicant_name, custom_applicant_last_name, email_id, phone_number):
+    print("**********************************")
+    print(applicant_name,custom_applicant_last_name, email_id, phone_number)
+    url = "https://ems-urlprotect.trendmicro.com:443/wis/clicktime/v1/query?url=http%3a%2f%2fdilsf.merillifeweb.com%2fNewUser.asmx%2fCreateUser&umid=35e5e65e-c1e3-412c-a58c-1acd95becd79&auth=386938388a5a1db71b12d9f9c73071895fd4f132-6562c98ed2dbc108735a1c8cb3455e8ce39e55de"
+    data = {
+
+        "NM": applicant_name,
+        "LN": custom_applicant_last_name,
+        "EL": email_id,
+        "CN": phone_number
+
+    }
+    response = requests.post(url, data=data)
+    if response.status_code == 200:
+        print("POST request successful")
+    else:
+        print(f"Failed to make POST request. Status code: {response.status_code}")
+
+
+
+
+# @frappe.whitelist(allow_guest=True)
+# def ilsf():
+#     values = frappe.db.sql("""SELECT applicant_name, custom_applicant_last_name, email_id, phone_number FROM `tabJob Applicant`""", as_dict=1)
+    
+
+#     url = "https://ems-urlprotect.trendmicro.com:443/wis/clicktime/v1/query?url=http%3a%2f%2fdilsf.merillifeweb.com%2fNewUser.asmx%2fCreateUser&umid=35e5e65e-c1e3-412c-a58c-1acd95becd79&auth=386938388a5a1db71b12d9f9c73071895fd4f132-6562c98ed2dbc108735a1c8cb3455e8ce39e55de"
+    
+   
+#     for entry in values:
+        
+#         data = {
+#             "NM": entry.get("applicant_name", ""),
+#             "LN": entry.get("custom_applicant_last_name", ""),
+#             "EL": entry.get("email_id", ""),
+#             "CN": entry.get("phone_number", "")
+#         }
+        
+        
+#         response = requests.post(url, data=data)
+        
+#         if response.status_code == 200:
+#             print("POST request successful!")
+#         else:
+#             print(f"Failed to make POST request. Status code: {response.status_code}")
+
+
+
+
+
+
+
+
+
+
+
+
 @frappe.whitelist(allow_guest=True)
 def test():
     url = "http://api.microcrispr.com/Attendance1/api/Values?username=admin&&password=MerilADM"
